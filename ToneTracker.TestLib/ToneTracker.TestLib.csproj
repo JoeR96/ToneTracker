@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <OpenApiReference Include="openAPIs/toneTrackerSwagger.json" SourceUrl="https://localhost:44356/swagger/v1/swagger.json" ClassName="ToneTrackerClient" OutputPath="ToneTrackerClient.cs" />
+        <OpenApiReference Include="openAPIs/authSwagger.json" SourceUrl="https://localhost:44375/swagger/v1/swagger.json" ClassName="AuthClient" OutputPath="AuthClient.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Concise.Steps" Version="0.5.7" />
+        <PackageReference Include="Concise.Steps.NUnit" Version="0.5.7" />
+        <PackageReference Include="FluentAssertions" Version="6.11.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.8" />
+      <PackageReference Include="NSwag.ApiDescription.Client" Version="13.19.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ToneTracker\ToneTracker.csproj" />
+    </ItemGroup>
+</Project>
